@@ -1,0 +1,13 @@
+# LaTeX build files (applies to docs/ and subfolders)
+*.aux
+*.log
+*.out
+*.toc
+*.pdf
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+docs/images/*.pdf     # Optional: wenn generiert
