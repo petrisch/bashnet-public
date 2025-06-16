@@ -1,0 +1,159 @@
+[
+    {
+        "id": "cmd_ls",
+        "label": "ls",
+        "type": "command",
+        "description": "Lists directory contents and displays file and directory metadata depending on options.",
+        "category": "file management",
+        "tags": [
+            "filesystem",
+            "listing",
+            "navigation",
+            "metadata"
+        ],
+        "examples": [
+            {
+                "command": "ls",
+                "expected_output": "file1.txt  file2.txt  dir1/",
+                "explanation": "Displays a basic list of visible files and folders in the current directory."
+            },
+            {
+                "command": "ls -l",
+                "expected_output": "-rw-r--r-- 1 user user 1234 Jan 1 12:00 file1.txt",
+                "explanation": "Shows file permissions, owner, group, size and last modification time in long list format."
+            }
+        ],
+        "options": [
+            "opt_a",
+            "opt_A",
+            "opt_author",
+            "opt_b",
+            "opt_block-size",
+            "opt_c",
+            "opt_C",
+            "opt_color",
+            "opt_d",
+            "opt_D",
+            "opt_f",
+            "opt_F",
+            "opt_file-type",
+            "opt_format",
+            "opt_full-time",
+            "opt_g",
+            "opt_G",
+            "opt_h",
+            "opt_si",
+            "opt_H",
+            "opt_dereference-command-line-symlink-to-dir",
+            "opt_hide",
+            "opt_hyperlink",
+            "opt_indicator-style",
+            "opt_i",
+            "opt_I",
+            "opt_k",
+            "opt_l",
+            "opt_L",
+            "opt_m",
+            "opt_n",
+            "opt_N",
+            "opt_o",
+            "opt_p",
+            "opt_q",
+            "opt_show-control-chars",
+            "opt_Q",
+            "opt_quoting-style",
+            "opt_r",
+            "opt_R",
+            "opt_s",
+            "opt_S",
+            "opt_sort",
+            "opt_time",
+            "opt_time-style",
+            "opt_t",
+            "opt_T",
+            "opt_u",
+            "opt_v",
+            "opt_w",
+            "opt_x",
+            "opt_X",
+            "opt_Z",
+            "opt_zero",
+            "opt_1",
+            "opt_help",
+            "opt_version"
+        ],
+        "related": [
+            "con_directory",
+            "cmd_pwd"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "cmd_cd",
+        "label": "cd",
+        "type": "command",
+        "description": "Changes the current working directory to a specified path.",
+        "category": "file management",
+        "tags": [
+            "filesystem",
+            "navigation",
+            "directory",
+            "shell"
+        ],
+        "examples": [
+            {
+                "command": "cd /home/user",
+                "expected_output": "",
+                "explanation": "Changes to the absolute path '/home/user'."
+            },
+            {
+                "command": "cd ..",
+                "expected_output": "",
+                "explanation": "Moves one level up to the parent directory."
+            }
+        ],
+        "options": [],
+        "related": [
+            "cmd_pwd",
+            "con_directory"
+        ],
+        "links": [
+            "https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#index-cd"
+        ]
+    },
+    {
+        "id": "cmd_pwd",
+        "label": "pwd",
+        "type": "command",
+        "description": "Prints the absolute path of the current working directory.",
+        "category": "file management",
+        "tags": [
+            "directory",
+            "location",
+            "navigation",
+            "shell"
+        ],
+        "examples": [
+            {
+                "command": "pwd",
+                "expected_output": "/home/user/projects",
+                "explanation": "Shows the full path of the directory you're currently in."
+            }
+        ],
+        "options": [
+            "opt_P",
+            "opt_L",
+            "opt_help",
+            "opt_version"
+        ],
+        "related": [
+            "cmd_cd",
+            "con_directory"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/pwd.1.html"
+        ]
+    }
+]

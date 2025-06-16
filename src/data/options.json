@@ -1,0 +1,341 @@
+[
+    {
+        "id": "opt_a",
+        "label": "-a",
+        "type": "option",
+        "description": "Includes all entries, even those that are normally hidden, such as dotfiles or user processes.",
+        "tags": [
+            "all",
+            "hidden",
+            "dotfiles",
+            "visibility"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html",
+            "https://man7.org/linux/man-pages/man1/ps.1.html"
+        ]
+    },
+    {
+        "id": "opt_A",
+        "label": "-A",
+        "type": "option",
+        "description": "Includes all entries except for implied . and .. directories.",
+        "tags": [
+            "almost-all",
+            "hidden",
+            "dotfiles"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_l",
+        "label": "-l",
+        "type": "option",
+        "description": "Displays information in a long listing format, including permissions, owner, group, size, and timestamp.",
+        "tags": [
+            "listing",
+            "detail",
+            "format"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_r",
+        "label": "-r",
+        "type": "option",
+        "description": "Performs the operation recursively on subdirectories and their contents.",
+        "tags": [
+            "recursive",
+            "directory",
+            "descent"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/rm.1.html",
+            "https://man7.org/linux/man-pages/man1/cp.1.html"
+        ]
+    },
+    {
+        "id": "opt_R",
+        "label": "-R",
+        "type": "option",
+        "description": "Recursively processes all subdirectories. Same effect as -r in many commands.",
+        "tags": [
+            "recursive",
+            "subtree"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_f",
+        "label": "-f",
+        "type": "option",
+        "description": "Forces the operation to continue without prompts, even on errors or overwrites.",
+        "tags": [
+            "force",
+            "suppress",
+            "overwrite"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/rm.1.html"
+        ]
+    },
+    {
+        "id": "opt_i",
+        "label": "-i",
+        "type": "option",
+        "description": "Asks for confirmation before performing actions like deletions or overwrites.",
+        "tags": [
+            "interactive",
+            "confirmation",
+            "safety"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/rm.1.html"
+        ]
+    },
+    {
+        "id": "opt_v",
+        "label": "-v",
+        "type": "option",
+        "description": "Enables verbose output, displaying what the command is doing.",
+        "tags": [
+            "verbose",
+            "output",
+            "logging"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/cp.1.html"
+        ]
+    },
+    {
+        "id": "opt_p",
+        "label": "-p",
+        "type": "option",
+        "description": "Preserves attributes (like timestamps, permissions) or creates parent directories as needed.",
+        "tags": [
+            "preserve",
+            "parents",
+            "structure"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/mkdir.1.html",
+            "https://man7.org/linux/man-pages/man1/cp.1.html"
+        ]
+    },
+    {
+        "id": "opt_h",
+        "label": "-h",
+        "type": "option",
+        "description": "Displays file sizes in human-readable format (e.g. 1K, 234M, 2G).",
+        "tags": [
+            "human-readable",
+            "size",
+            "units"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_n",
+        "label": "-n",
+        "type": "option",
+        "description": "Suppresses the trailing newline (e.g. in echo) or prevents overwriting existing files (in cp or mv).",
+        "tags": [
+            "newline",
+            "no-overwrite",
+            "output"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/echo.1.html",
+            "https://man7.org/linux/man-pages/man1/cp.1.html"
+        ]
+    },
+    {
+        "id": "opt_e",
+        "label": "-e",
+        "type": "option",
+        "description": "Enables interpretation of backslash escape sequences (e.g. \\n, \\t) in strings.",
+        "tags": [
+            "escape",
+            "formatting",
+            "output"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/echo.1.html"
+        ]
+    },
+    {
+        "id": "opt_d",
+        "label": "-d",
+        "type": "option",
+        "description": "Treats directories as files and avoids listing their contents.",
+        "tags": [
+            "directory",
+            "structure",
+            "no-recursion"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_m",
+        "label": "-m",
+        "type": "option",
+        "description": "Displays entries separated by commas instead of in columns or lines.",
+        "tags": [
+            "format",
+            "comma",
+            "listing"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_t",
+        "label": "-t",
+        "type": "option",
+        "description": "Sorts results by modification time, newest files first.",
+        "tags": [
+            "sort",
+            "time",
+            "modification"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_S",
+        "label": "-S",
+        "type": "option",
+        "description": "Sorts entries by file size, largest first.",
+        "tags": [
+            "sort",
+            "size"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_1",
+        "label": "-1",
+        "type": "option",
+        "description": "Forces output to be listed one item per line.",
+        "tags": [
+            "listing",
+            "output",
+            "layout"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_x",
+        "label": "-x",
+        "type": "option",
+        "description": "Displays entries horizontally across the screen rather than in columns.",
+        "tags": [
+            "layout",
+            "horizontal",
+            "format"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_q",
+        "label": "-q",
+        "type": "option",
+        "description": "Replaces non-printable characters in filenames with question marks.",
+        "tags": [
+            "sanitization",
+            "display",
+            "safe-output"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_help",
+        "label": "--help",
+        "type": "option",
+        "description": "Displays a short help text and exits. Common to most CLI tools.",
+        "tags": [
+            "help",
+            "usage",
+            "reference"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/"
+        ]
+    },
+    {
+        "id": "opt_version",
+        "label": "--version",
+        "type": "option",
+        "description": "Displays version information and exits. Standard across GNU/Linux tools.",
+        "tags": [
+            "version",
+            "release",
+            "info"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/"
+        ]
+    },
+    {
+        "id": "opt_hide",
+        "label": "--hide",
+        "type": "option",
+        "description": "Excludes entries matching a specified pattern from output.",
+        "tags": [
+            "filter",
+            "pattern",
+            "exclude"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_hyperlink",
+        "label": "--hyperlink",
+        "type": "option",
+        "description": "Adds terminal hyperlink metadata to file entries, if supported by terminal.",
+        "tags": [
+            "hyperlink",
+            "terminal",
+            "metadata"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    },
+    {
+        "id": "opt_color",
+        "label": "--color",
+        "type": "option",
+        "description": "Colorizes the output; accepts values like 'auto', 'always', or 'never'.",
+        "tags": [
+            "color",
+            "output",
+            "formatting"
+        ],
+        "links": [
+            "https://man7.org/linux/man-pages/man1/ls.1.html"
+        ]
+    }
+]

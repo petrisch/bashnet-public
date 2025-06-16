@@ -1,0 +1,57 @@
+[
+  {
+    "id": "con_file",
+    "label": "File",
+    "type": "concept",
+    "description": "A file is a data object stored in the filesystem. It can contain text, binary data, or be executable.",
+    "category": "filesystem",
+    "tags": ["data", "object", "text", "binary", "executable"],
+    "examples": ["readme.txt", "script.sh", "/etc/passwd"],
+    "related": ["cmd_ls", "cmd_rm"],
+    "links": ["https://en.wikipedia.org/wiki/Computer_file"]
+  },
+  {
+    "id": "con_directory",
+    "label": "Directory",
+    "type": "concept",
+    "description": "A directory is a container that holds files and other directories, forming the file hierarchy.",
+    "category": "filesystem",
+    "tags": ["folder", "path", "container"],
+    "examples": ["/home", "/usr/bin", "."],
+    "related": ["cmd_ls", "cmd_cd", "cmd_pwd"],
+    "links": ["https://en.wikipedia.org/wiki/Directory_(computing)"]
+  },
+  {
+    "id": "con_symlink",
+    "label": "Symbolic Link",
+    "type": "concept",
+    "description": "A symbolic link is a reference that points to another file or directory.",
+    "category": "filesystem",
+    "tags": ["link", "reference", "shortcut"],
+    "examples": ["my_link -> /var/log", "bin -> /usr/bin"],
+    "related": ["opt_H", "opt_L", "opt_dereference-command-line-symlink-to-dir"],
+    "links": ["https://en.wikipedia.org/wiki/Symbolic_link"]
+  },
+  {
+    "id": "con_hidden_file",
+    "label": "Hidden File",
+    "type": "concept",
+    "description": "A hidden file is a file or directory that begins with a dot (.) and is not shown by default.",
+    "category": "filesystem",
+    "tags": ["dotfile", "visibility", "config"],
+    "examples": [".bashrc", ".gitignore", ".config"],
+    "related": ["opt_a", "opt_A", "cmd_ls"],
+    "links": ["https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory"]
+  },
+  {
+    "id": "con_exit_code",
+    "label": "Exit Code",
+    "type": "concept",
+    "description": "The exit code is a numeric value returned by a process to indicate success or failure.",
+    "category": "process",
+    "tags": ["status", "return", "code", "script"],
+    "examples": ["0 (success)", "1 (general error)", "127 (command not found)"],
+    "related": ["con_process", "cmd_echo"],
+    "links": ["https://tldp.org/LDP/abs/html/exit-status.html"]
+  }
+]

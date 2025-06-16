@@ -1,0 +1,616 @@
+[
+    {
+        "id": "scr_if",
+        "label": "if",
+        "type": "scripting",
+        "description": "Evaluates a condition and executes a block of code if the condition is true.",
+        "category": "control structure",
+        "tags": [
+            "condition",
+            "branch",
+            "logic"
+        ],
+        "examples": [
+            {
+                "command": "if [ $x -eq 1 ]; then echo 'Equal'; fi",
+                "expected_output": "Equal",
+                "explanation": "Executes the code block because x equals 1."
+            },
+            {
+                "command": "if [ $x -eq 2 ]; then echo 'Yes'; else echo 'No'; fi",
+                "expected_output": "No",
+                "explanation": "The else block runs because the condition is false."
+            }
+        ],
+        "related": [
+            "scr_then",
+            "scr_else"
+        ],
+        "links": [
+            "https://www.gnu.org/software/bash/manual/bash.html#Conditional-Constructs"
+        ]
+    },
+    {
+        "id": "scr_for",
+        "label": "for",
+        "type": "scripting",
+        "description": "Iterates over a list or sequence of values and runs the code block for each item.",
+        "category": "loop",
+        "tags": [
+            "iteration",
+            "loop",
+            "range"
+        ],
+        "examples": [
+            {
+                "command": "for i in 1 2 3; do echo $i; done",
+                "expected_output": "1\n2\n3",
+                "explanation": "Loops over a list of numbers and echoes each one."
+            },
+            {
+                "command": "for file in *.txt; do echo $file; done",
+                "expected_output": "file1.txt\nfile2.txt",
+                "explanation": "Iterates over all .txt files in the directory."
+            },
+            {
+                "command": "for ((i=0; i<3; i++)); do echo $i; done",
+                "expected_output": "0\n1\n2",
+                "explanation": "C-style loop using numeric counter."
+            }
+        ],
+        "related": [
+            "scr_do",
+            "scr_done"
+        ],
+        "links": [
+            "https://www.gnu.org/software/bash/manual/html_node/Looping-Constructs.html"
+        ]
+    },
+    {
+        "id": "scr_while",
+        "label": "while",
+        "type": "scripting",
+        "description": "Executes a block of code repeatedly as long as the condition is true.",
+        "category": "loop",
+        "tags": [
+            "condition",
+            "loop",
+            "control"
+        ],
+        "examples": [
+            {
+                "command": "x=0; while [ $x -lt 3 ]; do echo $x; x=$((x+1)); done",
+                "expected_output": "0\n1\n2",
+                "explanation": "Increments x until the condition is false."
+            }
+        ],
+        "related": [
+            "scr_do",
+            "scr_done"
+        ],
+        "links": [
+            "https://www.gnu.org/software/bash/manual/html_node/Looping-Constructs.html"
+        ]
+    },
+    {
+        "id": "scr_variable",
+        "label": "Variable Assignment",
+        "type": "scripting",
+        "description": "Stores a value in a shell variable for reuse.",
+        "category": "variable",
+        "tags": [
+            "assignment",
+            "value",
+            "shell-variable"
+        ],
+        "examples": [
+            {
+                "command": "name='Alice'",
+                "expected_output": "",
+                "explanation": "Assigns the string 'Alice' to the variable 'name'."
+            },
+            {
+                "command": "count=42",
+                "expected_output": "",
+                "explanation": "Assigns the number 42 to the variable 'count'."
+            }
+        ],
+        "related": [
+            "cmd_echo",
+            "con_variable"
+        ],
+        "links": [
+            "https://www.gnu.org/software/bash/manual/html_node/Shell-Variables.html"
+        ]
+    },
+    {
+        "id": "scr_redirection",
+        "label": "Redirection",
+        "type": "scripting",
+        "description": "Redirects standard output or error to a file or another stream.",
+        "category": "io",
+        "tags": [
+            "stdout",
+            "stderr",
+            "file",
+            "append"
+        ],
+        "examples": [
+            {
+                "command": "echo 'Hello' > output.txt",
+                "expected_output": "",
+                "explanation": "Overwrites output.txt with 'Hello'."
+            },
+            {
+                "command": "echo 'Error' >> log.txt",
+                "expected_output": "",
+                "explanation": "Appends 'Error' to log.txt."
+            },
+            {
+                "command": "ls nonexisting 2> error.txt",
+                "expected_output": "",
+                "explanation": "Redirects stderr to error.txt."
+            }
+        ],
+        "related": [
+            "cmd_echo",
+            "con_file"
+        ],
+        "links": [
+            "https://www.gnu.org/software/bash/manual/html_node/Redirections.html"
+        ]
+    },
+    {
+        "id": "scr_then",
+        "label": "then",
+        "type": "scripting",
+        "description": "Marks the beginning of a code block that should execute if a condition is true.",
+        "category": "control structure",
+        "tags": [
+            "conditional",
+            "branch",
+            "logic"
+        ],
+        "examples": [
+            {
+                "command": "if [ $x -eq 1 ]; then echo 'x is 1'; fi",
+                "expected_output": "x is 1",
+                "explanation": "The code after 'then' executes because the condition is true."
+            }
+        ],
+        "related": [
+            "scr_if",
+            "scr_else"
+        ]
+    },
+    {
+        "id": "scr_else",
+        "label": "else",
+        "type": "scripting",
+        "description": "Defines the code block to execute when the if-condition is false.",
+        "category": "control structure",
+        "tags": [
+            "conditional",
+            "fallback",
+            "branch"
+        ],
+        "examples": [
+            {
+                "command": "if [ $x -eq 0 ]; then echo 'Zero'; else echo 'Not Zero'; fi",
+                "expected_output": "Not Zero",
+                "explanation": "The else block executes because the condition is false."
+            }
+        ],
+        "related": [
+            "scr_if",
+            "scr_then"
+        ]
+    },
+    {
+        "id": "scr_do",
+        "label": "do",
+        "type": "scripting",
+        "description": "Marks the beginning of a loop body for for-, while-, or until-loops.",
+        "category": "loop",
+        "tags": [
+            "loop",
+            "body",
+            "structure"
+        ],
+        "examples": [
+            {
+                "command": "for i in 1 2 3; do echo $i; done",
+                "expected_output": "1\n2\n3",
+                "explanation": "The loop body starts after 'do'."
+            }
+        ],
+        "related": [
+            "scr_for",
+            "scr_done"
+        ]
+    },
+    {
+        "id": "scr_done",
+        "label": "done",
+        "type": "scripting",
+        "description": "Marks the end of a loop body for for-, while-, or until-loops.",
+        "category": "loop",
+        "tags": [
+            "loop",
+            "end",
+            "structure"
+        ],
+        "examples": [
+            {
+                "command": "while [ $x -lt 2 ]; do echo $x; x=$((x+1)); done",
+                "expected_output": "0\n1",
+                "explanation": "The loop ends after 'done'."
+            }
+        ],
+        "related": [
+            "scr_do",
+            "scr_while"
+        ]
+    },
+    {
+        "id": "scr_case",
+        "label": "case",
+        "type": "scripting",
+        "description": "Performs multi-branch selection based on pattern matching.",
+        "category": "control structure",
+        "tags": [
+            "branch",
+            "pattern",
+            "match"
+        ],
+        "examples": [
+            {
+                "command": "case $x in 1) echo 'One';; 2) echo 'Two';; *) echo 'Other';; esac",
+                "expected_output": "One",
+                "explanation": "Matches variable x against defined patterns."
+            }
+        ],
+        "related": [
+            "scr_esac",
+            "scr_if"
+        ]
+    },
+    {
+        "id": "scr_function",
+        "label": "Function",
+        "type": "scripting",
+        "description": "Defines a reusable block of code that can be called by name.",
+        "category": "function",
+        "tags": [
+            "modular",
+            "reuse",
+            "define"
+        ],
+        "examples": [
+            {
+                "command": "_my_func() { echo Hello; }; _my_func",
+                "expected_output": "Hello",
+                "explanation": "Defines and calls a function named _my_func."
+            }
+        ],
+        "related": [
+            "scr_return"
+        ]
+    },
+    {
+        "id": "scr_return",
+        "label": "return",
+        "type": "scripting",
+        "description": "Exits a function and optionally returns a numeric status code.",
+        "category": "function",
+        "tags": [
+            "exit",
+            "function",
+            "status"
+        ],
+        "examples": [
+            {
+                "command": "_my_func() { return 42; }; _my_func; echo $?",
+                "expected_output": "42",
+                "explanation": "The return value of the function is stored in $?."
+            }
+        ],
+        "related": [
+            "scr_function",
+            "con_exit_code"
+        ]
+    },
+    {
+        "id": "scr_read",
+        "label": "read",
+        "type": "scripting",
+        "description": "Reads a line of input from standard input and stores it in a variable.",
+        "category": "io",
+        "tags": [
+            "input",
+            "stdin",
+            "interactive"
+        ],
+        "examples": [
+            {
+                "command": "read name",
+                "expected_output": "",
+                "explanation": "Waits for user input and stores it in the variable 'name'."
+            }
+        ],
+        "related": [
+            "scr_variable",
+            "cmd_echo"
+        ]
+    },
+    {
+        "id": "scr_test",
+        "label": "test",
+        "type": "scripting",
+        "description": "Evaluates expressions and returns a success or failure exit status.",
+        "category": "logic",
+        "tags": [
+            "condition",
+            "comparison",
+            "status"
+        ],
+        "examples": [
+            {
+                "command": "test 1 -eq 1 && echo 'equal'",
+                "expected_output": "equal",
+                "explanation": "The condition is true, so the echo command runs."
+            },
+            {
+                "command": "[ 1 -eq 1 ] && echo 'equal'",
+                "expected_output": "equal",
+                "explanation": "Alternative syntax using brackets."
+            }
+        ],
+        "related": [
+            "scr_if",
+            "con_exit_code"
+        ]
+    },
+    {
+        "id": "scr_esac",
+        "label": "esac",
+        "type": "scripting",
+        "description": "Marks the end of a case statement.",
+        "category": "control structure",
+        "tags": [
+            "case",
+            "block",
+            "end"
+        ],
+        "examples": [
+            {
+                "command": "case $x in 1) echo one;; *) echo other;; esac",
+                "expected_output": "one",
+                "explanation": "Ends the case block."
+            }
+        ],
+        "related": [
+            "scr_case"
+        ]
+    },
+    {
+        "id": "scr_op_eq",
+        "label": "-eq",
+        "type": "scripting",
+        "category": "comparison operator",
+        "description": "Numeric equality check. Returns true if the two numbers are equal. Only valid within test expressions like [ ... ] or test.",
+        "tags": [
+            "comparison",
+            "numeric",
+            "equality"
+        ],
+        "examples": [
+            {
+                "command": "[ 5 -eq 5 ] && echo 'equal'",
+                "expected_output": "equal",
+                "explanation": "The condition is true because both numbers are equal."
+            }
+        ],
+        "related": [
+            "scr_test"
+        ]
+    },
+    {
+        "id": "scr_op_ne",
+        "label": "-ne",
+        "type": "scripting",
+        "category": "comparison operator",
+        "description": "Numeric inequality check. Returns true if the numbers are not equal. Only valid within test expressions.",
+        "tags": [
+            "comparison",
+            "numeric",
+            "not-equal"
+        ],
+        "examples": [
+            {
+                "command": "[ 3 -ne 5 ] && echo 'not equal'",
+                "expected_output": "not equal",
+                "explanation": "The condition is true because the numbers are different."
+            }
+        ],
+        "related": [
+            "scr_test"
+        ]
+    },
+    {
+        "id": "scr_op_lt",
+        "label": "-lt",
+        "type": "scripting",
+        "category": "comparison operator",
+        "description": "Numeric less-than comparison. Only usable inside test expressions.",
+        "tags": [
+            "comparison",
+            "numeric",
+            "less-than"
+        ],
+        "examples": [
+            {
+                "command": "[ 2 -lt 5 ] && echo 'less'",
+                "expected_output": "less",
+                "explanation": "2 is less than 5."
+            }
+        ],
+        "related": [
+            "scr_test"
+        ]
+    },
+    {
+        "id": "scr_op_le",
+        "label": "-le",
+        "type": "scripting",
+        "category": "comparison operator",
+        "description": "Numeric less-than-or-equal comparison inside test conditions.",
+        "tags": [
+            "comparison",
+            "numeric",
+            "le"
+        ],
+        "examples": [
+            {
+                "command": "[ 5 -le 5 ] && echo 'ok'",
+                "expected_output": "ok",
+                "explanation": "The numbers are equal, so the condition holds."
+            }
+        ],
+        "related": [
+            "scr_test"
+        ]
+    },
+    {
+        "id": "scr_op_gt",
+        "label": "-gt",
+        "type": "scripting",
+        "category": "comparison operator",
+        "description": "Numeric greater-than comparison inside test expressions.",
+        "tags": [
+            "comparison",
+            "numeric",
+            "greater-than"
+        ],
+        "examples": [
+            {
+                "command": "[ 9 -gt 3 ] && echo 'yes'",
+                "expected_output": "yes",
+                "explanation": "9 is greater than 3."
+            }
+        ],
+        "related": [
+            "scr_test"
+        ]
+    },
+    {
+        "id": "scr_op_ge",
+        "label": "-ge",
+        "type": "scripting",
+        "category": "comparison operator",
+        "description": "Numeric greater-than-or-equal comparison. Must be used in test or [ ].",
+        "tags": [
+            "comparison",
+            "numeric",
+            "ge"
+        ],
+        "examples": [
+            {
+                "command": "[ 7 -ge 5 ] && echo 'ok'",
+                "expected_output": "ok",
+                "explanation": "7 is greater than or equal to 5."
+            }
+        ],
+        "related": [
+            "scr_test"
+        ]
+    },
+    {
+        "id": "scr_op_str_eq",
+        "label": "=",
+        "type": "scripting",
+        "category": "string operator",
+        "description": "Checks if two strings are equal. Only valid in [ ] or [[ ]].",
+        "tags": [
+            "string",
+            "equality",
+            "comparison"
+        ],
+        "examples": [
+            {
+                "command": "[ \"$x\" = \"yes\" ] && echo 'match'",
+                "expected_output": "match",
+                "explanation": "The strings are identical."
+            }
+        ],
+        "related": [
+            "scr_test"
+        ]
+    },
+    {
+        "id": "scr_op_str_ne",
+        "label": "!=",
+        "type": "scripting",
+        "category": "string operator",
+        "description": "Checks if two strings are not equal. Only usable in test contexts.",
+        "tags": [
+            "string",
+            "comparison",
+            "inequality"
+        ],
+        "examples": [
+            {
+                "command": "[ \"$x\" != \"no\" ] && echo 'different'",
+                "expected_output": "different",
+                "explanation": "The strings are not equal."
+            }
+        ],
+        "related": [
+            "scr_test"
+        ]
+    },
+    {
+        "id": "scr_op_z",
+        "label": "-z",
+        "type": "scripting",
+        "category": "string operator",
+        "description": "Returns true if the string is empty. Only used inside [ ] or test.",
+        "tags": [
+            "string",
+            "empty",
+            "check"
+        ],
+        "examples": [
+            {
+                "command": "[ -z \"$name\" ] && echo 'empty'",
+                "expected_output": "empty",
+                "explanation": "The variable is empty."
+            }
+        ],
+        "related": [
+            "scr_test"
+        ]
+    },
+    {
+        "id": "scr_op_n",
+        "label": "-n",
+        "type": "scripting",
+        "category": "string operator",
+        "description": "Returns true if the string is not empty. Valid only in test expressions.",
+        "tags": [
+            "string",
+            "non-empty",
+            "check"
+        ],
+        "examples": [
+            {
+                "command": "[ -n \"$name\" ] && echo 'has content'",
+                "expected_output": "has content",
+                "explanation": "The variable contains data."
+            }
+        ],
+        "related": [
+            "scr_test"
+        ]
+    }
+]
