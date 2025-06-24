@@ -1,0 +1,892 @@
+{
+  "nodes": [
+    {
+      "id": "cmd_ls",
+      "label": "ls",
+      "type": "command",
+      "description": "Lists directory contents and displays file and directory metadata depending on options.",
+      "category": "file management",
+      "tags": [
+        "filesystem",
+        "listing",
+        "navigation",
+        "metadata"
+      ]
+    },
+    {
+      "id": "cmd_cd",
+      "label": "cd",
+      "type": "command",
+      "description": "Changes the current working directory to a specified path.",
+      "category": "file management",
+      "tags": [
+        "filesystem",
+        "navigation",
+        "directory",
+        "shell"
+      ]
+    },
+    {
+      "id": "cmd_pwd",
+      "label": "pwd",
+      "type": "command",
+      "description": "Prints the absolute path of the current working directory.",
+      "category": "file management",
+      "tags": [
+        "directory",
+        "location",
+        "navigation",
+        "shell"
+      ]
+    },
+    {
+      "id": "opt_a",
+      "label": "-a",
+      "type": "option",
+      "description": "Includes all entries, even those that are normally hidden, such as dotfiles or user processes.",
+      "tags": [
+        "all",
+        "hidden",
+        "dotfiles",
+        "visibility"
+      ]
+    },
+    {
+      "id": "opt_A",
+      "label": "-A",
+      "type": "option",
+      "description": "Includes all entries except for implied . and .. directories.",
+      "tags": [
+        "almost-all",
+        "hidden",
+        "dotfiles"
+      ]
+    },
+    {
+      "id": "opt_l",
+      "label": "-l",
+      "type": "option",
+      "description": "Displays information in a long listing format, including permissions, owner, group, size, and timestamp.",
+      "tags": [
+        "listing",
+        "detail",
+        "format"
+      ]
+    },
+    {
+      "id": "opt_r",
+      "label": "-r",
+      "type": "option",
+      "description": "Performs the operation recursively on subdirectories and their contents.",
+      "tags": [
+        "recursive",
+        "directory",
+        "descent"
+      ]
+    },
+    {
+      "id": "opt_R",
+      "label": "-R",
+      "type": "option",
+      "description": "Recursively processes all subdirectories. Same effect as -r in many commands.",
+      "tags": [
+        "recursive",
+        "subtree"
+      ]
+    },
+    {
+      "id": "opt_f",
+      "label": "-f",
+      "type": "option",
+      "description": "Forces the operation to continue without prompts, even on errors or overwrites.",
+      "tags": [
+        "force",
+        "suppress",
+        "overwrite"
+      ]
+    },
+    {
+      "id": "opt_i",
+      "label": "-i",
+      "type": "option",
+      "description": "Asks for confirmation before performing actions like deletions or overwrites.",
+      "tags": [
+        "interactive",
+        "confirmation",
+        "safety"
+      ]
+    },
+    {
+      "id": "opt_v",
+      "label": "-v",
+      "type": "option",
+      "description": "Enables verbose output, displaying what the command is doing.",
+      "tags": [
+        "verbose",
+        "output",
+        "logging"
+      ]
+    },
+    {
+      "id": "opt_p",
+      "label": "-p",
+      "type": "option",
+      "description": "Preserves attributes (like timestamps, permissions) or creates parent directories as needed.",
+      "tags": [
+        "preserve",
+        "parents",
+        "structure"
+      ]
+    },
+    {
+      "id": "opt_h",
+      "label": "-h",
+      "type": "option",
+      "description": "Displays file sizes in human-readable format (e.g. 1K, 234M, 2G).",
+      "tags": [
+        "human-readable",
+        "size",
+        "units"
+      ]
+    },
+    {
+      "id": "opt_n",
+      "label": "-n",
+      "type": "option",
+      "description": "Suppresses the trailing newline (e.g. in echo) or prevents overwriting existing files (in cp or mv).",
+      "tags": [
+        "newline",
+        "no-overwrite",
+        "output"
+      ]
+    },
+    {
+      "id": "opt_e",
+      "label": "-e",
+      "type": "option",
+      "description": "Enables interpretation of backslash escape sequences (e.g. \\n, \\t) in strings.",
+      "tags": [
+        "escape",
+        "formatting",
+        "output"
+      ]
+    },
+    {
+      "id": "opt_d",
+      "label": "-d",
+      "type": "option",
+      "description": "Treats directories as files and avoids listing their contents.",
+      "tags": [
+        "directory",
+        "structure",
+        "no-recursion"
+      ]
+    },
+    {
+      "id": "opt_m",
+      "label": "-m",
+      "type": "option",
+      "description": "Displays entries separated by commas instead of in columns or lines.",
+      "tags": [
+        "format",
+        "comma",
+        "listing"
+      ]
+    },
+    {
+      "id": "opt_t",
+      "label": "-t",
+      "type": "option",
+      "description": "Sorts results by modification time, newest files first.",
+      "tags": [
+        "sort",
+        "time",
+        "modification"
+      ]
+    },
+    {
+      "id": "opt_S",
+      "label": "-S",
+      "type": "option",
+      "description": "Sorts entries by file size, largest first.",
+      "tags": [
+        "sort",
+        "size"
+      ]
+    },
+    {
+      "id": "opt_1",
+      "label": "-1",
+      "type": "option",
+      "description": "Forces output to be listed one item per line.",
+      "tags": [
+        "listing",
+        "output",
+        "layout"
+      ]
+    },
+    {
+      "id": "opt_x",
+      "label": "-x",
+      "type": "option",
+      "description": "Displays entries horizontally across the screen rather than in columns.",
+      "tags": [
+        "layout",
+        "horizontal",
+        "format"
+      ]
+    },
+    {
+      "id": "opt_q",
+      "label": "-q",
+      "type": "option",
+      "description": "Replaces non-printable characters in filenames with question marks.",
+      "tags": [
+        "sanitization",
+        "display",
+        "safe-output"
+      ]
+    },
+    {
+      "id": "opt_help",
+      "label": "--help",
+      "type": "option",
+      "description": "Displays a short help text and exits. Common to most CLI tools.",
+      "tags": [
+        "help",
+        "usage",
+        "reference"
+      ]
+    },
+    {
+      "id": "opt_version",
+      "label": "--version",
+      "type": "option",
+      "description": "Displays version information and exits. Standard across GNU/Linux tools.",
+      "tags": [
+        "version",
+        "release",
+        "info"
+      ]
+    },
+    {
+      "id": "opt_hide",
+      "label": "--hide",
+      "type": "option",
+      "description": "Excludes entries matching a specified pattern from output.",
+      "tags": [
+        "filter",
+        "pattern",
+        "exclude"
+      ]
+    },
+    {
+      "id": "opt_hyperlink",
+      "label": "--hyperlink",
+      "type": "option",
+      "description": "Adds terminal hyperlink metadata to file entries, if supported by terminal.",
+      "tags": [
+        "hyperlink",
+        "terminal",
+        "metadata"
+      ]
+    },
+    {
+      "id": "opt_color",
+      "label": "--color",
+      "type": "option",
+      "description": "Colorizes the output; accepts values like 'auto', 'always', or 'never'.",
+      "tags": [
+        "color",
+        "output",
+        "formatting"
+      ]
+    },
+    {
+      "id": "con_file",
+      "label": "File",
+      "type": "concept",
+      "description": "A file is a data object stored in the filesystem. It can contain text, binary data, or be executable.",
+      "category": "filesystem",
+      "tags": [
+        "data",
+        "object",
+        "text",
+        "binary",
+        "executable"
+      ]
+    },
+    {
+      "id": "con_directory",
+      "label": "Directory",
+      "type": "concept",
+      "description": "A directory is a container that holds files and other directories, forming the file hierarchy.",
+      "category": "filesystem",
+      "tags": [
+        "folder",
+        "path",
+        "container"
+      ]
+    },
+    {
+      "id": "con_symlink",
+      "label": "Symbolic Link",
+      "type": "concept",
+      "description": "A symbolic link is a reference that points to another file or directory.",
+      "category": "filesystem",
+      "tags": [
+        "link",
+        "reference",
+        "shortcut"
+      ]
+    },
+    {
+      "id": "con_hidden_file",
+      "label": "Hidden File",
+      "type": "concept",
+      "description": "A hidden file is a file or directory that begins with a dot (.) and is not shown by default.",
+      "category": "filesystem",
+      "tags": [
+        "dotfile",
+        "visibility",
+        "config"
+      ]
+    },
+    {
+      "id": "con_exit_code",
+      "label": "Exit Code",
+      "type": "concept",
+      "description": "The exit code is a numeric value returned by a process to indicate success or failure.",
+      "category": "process",
+      "tags": [
+        "status",
+        "return",
+        "code",
+        "script"
+      ]
+    },
+    {
+      "id": "scr_if",
+      "label": "if",
+      "type": "scripting",
+      "description": "Evaluates a condition and executes a block of code if the condition is true.",
+      "category": "control structure",
+      "tags": [
+        "condition",
+        "branch",
+        "logic"
+      ]
+    },
+    {
+      "id": "scr_for",
+      "label": "for",
+      "type": "scripting",
+      "description": "Iterates over a list or sequence of values and runs the code block for each item.",
+      "category": "loop",
+      "tags": [
+        "iteration",
+        "loop",
+        "range"
+      ]
+    },
+    {
+      "id": "scr_while",
+      "label": "while",
+      "type": "scripting",
+      "description": "Executes a block of code repeatedly as long as the condition is true.",
+      "category": "loop",
+      "tags": [
+        "condition",
+        "loop",
+        "control"
+      ]
+    },
+    {
+      "id": "scr_variable",
+      "label": "Variable Assignment",
+      "type": "scripting",
+      "description": "Stores a value in a shell variable for reuse.",
+      "category": "variable",
+      "tags": [
+        "assignment",
+        "value",
+        "shell-variable"
+      ]
+    },
+    {
+      "id": "scr_redirection",
+      "label": "Redirection",
+      "type": "scripting",
+      "description": "Redirects standard output or error to a file or another stream.",
+      "category": "io",
+      "tags": [
+        "stdout",
+        "stderr",
+        "file",
+        "append"
+      ]
+    },
+    {
+      "id": "scr_then",
+      "label": "then",
+      "type": "scripting",
+      "description": "Marks the beginning of a code block that should execute if a condition is true.",
+      "category": "control structure",
+      "tags": [
+        "conditional",
+        "branch",
+        "logic"
+      ]
+    },
+    {
+      "id": "scr_else",
+      "label": "else",
+      "type": "scripting",
+      "description": "Defines the code block to execute when the if-condition is false.",
+      "category": "control structure",
+      "tags": [
+        "conditional",
+        "fallback",
+        "branch"
+      ]
+    },
+    {
+      "id": "scr_do",
+      "label": "do",
+      "type": "scripting",
+      "description": "Marks the beginning of a loop body for for-, while-, or until-loops.",
+      "category": "loop",
+      "tags": [
+        "loop",
+        "body",
+        "structure"
+      ]
+    },
+    {
+      "id": "scr_done",
+      "label": "done",
+      "type": "scripting",
+      "description": "Marks the end of a loop body for for-, while-, or until-loops.",
+      "category": "loop",
+      "tags": [
+        "loop",
+        "end",
+        "structure"
+      ]
+    },
+    {
+      "id": "scr_case",
+      "label": "case",
+      "type": "scripting",
+      "description": "Performs multi-branch selection based on pattern matching.",
+      "category": "control structure",
+      "tags": [
+        "branch",
+        "pattern",
+        "match"
+      ]
+    },
+    {
+      "id": "scr_function",
+      "label": "Function",
+      "type": "scripting",
+      "description": "Defines a reusable block of code that can be called by name.",
+      "category": "function",
+      "tags": [
+        "modular",
+        "reuse",
+        "define"
+      ]
+    },
+    {
+      "id": "scr_return",
+      "label": "return",
+      "type": "scripting",
+      "description": "Exits a function and optionally returns a numeric status code.",
+      "category": "function",
+      "tags": [
+        "exit",
+        "function",
+        "status"
+      ]
+    },
+    {
+      "id": "scr_read",
+      "label": "read",
+      "type": "scripting",
+      "description": "Reads a line of input from standard input and stores it in a variable.",
+      "category": "io",
+      "tags": [
+        "input",
+        "stdin",
+        "interactive"
+      ]
+    },
+    {
+      "id": "scr_test",
+      "label": "test",
+      "type": "scripting",
+      "description": "Evaluates expressions and returns a success or failure exit status.",
+      "category": "logic",
+      "tags": [
+        "condition",
+        "comparison",
+        "status"
+      ]
+    },
+    {
+      "id": "scr_esac",
+      "label": "esac",
+      "type": "scripting",
+      "description": "Marks the end of a case statement.",
+      "category": "control structure",
+      "tags": [
+        "case",
+        "block",
+        "end"
+      ]
+    },
+    {
+      "id": "scr_op_eq",
+      "label": "-eq",
+      "type": "scripting",
+      "category": "comparison operator",
+      "description": "Numeric equality check. Returns true if the two numbers are equal. Only valid within test expressions like [ ... ] or test.",
+      "tags": [
+        "comparison",
+        "numeric",
+        "equality"
+      ]
+    },
+    {
+      "id": "scr_op_ne",
+      "label": "-ne",
+      "type": "scripting",
+      "category": "comparison operator",
+      "description": "Numeric inequality check. Returns true if the numbers are not equal. Only valid within test expressions.",
+      "tags": [
+        "comparison",
+        "numeric",
+        "not-equal"
+      ]
+    },
+    {
+      "id": "scr_op_lt",
+      "label": "-lt",
+      "type": "scripting",
+      "category": "comparison operator",
+      "description": "Numeric less-than comparison. Only usable inside test expressions.",
+      "tags": [
+        "comparison",
+        "numeric",
+        "less-than"
+      ]
+    },
+    {
+      "id": "scr_op_le",
+      "label": "-le",
+      "type": "scripting",
+      "category": "comparison operator",
+      "description": "Numeric less-than-or-equal comparison inside test conditions.",
+      "tags": [
+        "comparison",
+        "numeric",
+        "le"
+      ]
+    },
+    {
+      "id": "scr_op_gt",
+      "label": "-gt",
+      "type": "scripting",
+      "category": "comparison operator",
+      "description": "Numeric greater-than comparison inside test expressions.",
+      "tags": [
+        "comparison",
+        "numeric",
+        "greater-than"
+      ]
+    },
+    {
+      "id": "scr_op_ge",
+      "label": "-ge",
+      "type": "scripting",
+      "category": "comparison operator",
+      "description": "Numeric greater-than-or-equal comparison. Must be used in test or [ ].",
+      "tags": [
+        "comparison",
+        "numeric",
+        "ge"
+      ]
+    },
+    {
+      "id": "scr_op_str_eq",
+      "label": "=",
+      "type": "scripting",
+      "category": "string operator",
+      "description": "Checks if two strings are equal. Only valid in [ ] or [[ ]].",
+      "tags": [
+        "string",
+        "equality",
+        "comparison"
+      ]
+    },
+    {
+      "id": "scr_op_str_ne",
+      "label": "!=",
+      "type": "scripting",
+      "category": "string operator",
+      "description": "Checks if two strings are not equal. Only usable in test contexts.",
+      "tags": [
+        "string",
+        "comparison",
+        "inequality"
+      ]
+    },
+    {
+      "id": "scr_op_z",
+      "label": "-z",
+      "type": "scripting",
+      "category": "string operator",
+      "description": "Returns true if the string is empty. Only used inside [ ] or test.",
+      "tags": [
+        "string",
+        "empty",
+        "check"
+      ]
+    },
+    {
+      "id": "scr_op_n",
+      "label": "-n",
+      "type": "scripting",
+      "category": "string operator",
+      "description": "Returns true if the string is not empty. Valid only in test expressions.",
+      "tags": [
+        "string",
+        "non-empty",
+        "check"
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "cmd_ls",
+      "cmd_pwd",
+      "related"
+    ],
+    [
+      "cmd_cd",
+      "cmd_pwd",
+      "related"
+    ],
+    [
+      "cmd_pwd",
+      "cmd_cd",
+      "related"
+    ],
+    [
+      "con_file",
+      "cmd_ls",
+      "related"
+    ],
+    [
+      "con_directory",
+      "cmd_ls",
+      "related"
+    ],
+    [
+      "con_directory",
+      "cmd_cd",
+      "related"
+    ],
+    [
+      "con_directory",
+      "cmd_pwd",
+      "related"
+    ],
+    [
+      "con_hidden_file",
+      "opt_a",
+      "related"
+    ],
+    [
+      "con_hidden_file",
+      "opt_A",
+      "related"
+    ],
+    [
+      "con_hidden_file",
+      "cmd_ls",
+      "related"
+    ],
+    [
+      "scr_if",
+      "scr_then",
+      "related"
+    ],
+    [
+      "scr_if",
+      "scr_else",
+      "related"
+    ],
+    [
+      "scr_for",
+      "scr_do",
+      "related"
+    ],
+    [
+      "scr_for",
+      "scr_done",
+      "related"
+    ],
+    [
+      "scr_while",
+      "scr_do",
+      "related"
+    ],
+    [
+      "scr_while",
+      "scr_done",
+      "related"
+    ],
+    [
+      "scr_redirection",
+      "con_file",
+      "related"
+    ],
+    [
+      "scr_then",
+      "scr_if",
+      "related"
+    ],
+    [
+      "scr_then",
+      "scr_else",
+      "related"
+    ],
+    [
+      "scr_else",
+      "scr_if",
+      "related"
+    ],
+    [
+      "scr_else",
+      "scr_then",
+      "related"
+    ],
+    [
+      "scr_do",
+      "scr_for",
+      "related"
+    ],
+    [
+      "scr_do",
+      "scr_done",
+      "related"
+    ],
+    [
+      "scr_done",
+      "scr_do",
+      "related"
+    ],
+    [
+      "scr_done",
+      "scr_while",
+      "related"
+    ],
+    [
+      "scr_case",
+      "scr_esac",
+      "related"
+    ],
+    [
+      "scr_case",
+      "scr_if",
+      "related"
+    ],
+    [
+      "scr_function",
+      "scr_return",
+      "related"
+    ],
+    [
+      "scr_return",
+      "scr_function",
+      "related"
+    ],
+    [
+      "scr_return",
+      "con_exit_code",
+      "related"
+    ],
+    [
+      "scr_read",
+      "scr_variable",
+      "related"
+    ],
+    [
+      "scr_test",
+      "scr_if",
+      "related"
+    ],
+    [
+      "scr_test",
+      "con_exit_code",
+      "related"
+    ],
+    [
+      "scr_esac",
+      "scr_case",
+      "related"
+    ],
+    [
+      "scr_op_eq",
+      "scr_test",
+      "related"
+    ],
+    [
+      "scr_op_ne",
+      "scr_test",
+      "related"
+    ],
+    [
+      "scr_op_lt",
+      "scr_test",
+      "related"
+    ],
+    [
+      "scr_op_le",
+      "scr_test",
+      "related"
+    ],
+    [
+      "scr_op_gt",
+      "scr_test",
+      "related"
+    ],
+    [
+      "scr_op_ge",
+      "scr_test",
+      "related"
+    ],
+    [
+      "scr_op_str_eq",
+      "scr_test",
+      "related"
+    ],
+    [
+      "scr_op_str_ne",
+      "scr_test",
+      "related"
+    ],
+    [
+      "scr_op_z",
+      "scr_test",
+      "related"
+    ],
+    [
+      "scr_op_n",
+      "scr_test",
+      "related"
+    ]
+  ]
+}
