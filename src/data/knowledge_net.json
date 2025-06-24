@@ -11,6 +11,21 @@
         "listing",
         "navigation",
         "metadata"
+      ],
+      "examples": [
+        {
+          "command": "ls",
+          "expected_output": "file1.txt  file2.txt  dir1/",
+          "explanation": "Displays a basic list of visible files and folders in the current directory."
+        },
+        {
+          "command": "ls -l",
+          "expected_output": "-rw-r--r-- 1 user user 1234 Jan 1 12:00 file1.txt",
+          "explanation": "Shows file permissions, owner, group, size and last modification time in long list format."
+        }
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -24,6 +39,21 @@
         "navigation",
         "directory",
         "shell"
+      ],
+      "examples": [
+        {
+          "command": "cd /home/user",
+          "expected_output": "",
+          "explanation": "Changes to the absolute path '/home/user'."
+        },
+        {
+          "command": "cd ..",
+          "expected_output": "",
+          "explanation": "Moves one level up to the parent directory."
+        }
+      ],
+      "links": [
+        "https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#index-cd"
       ]
     },
     {
@@ -37,6 +67,16 @@
         "location",
         "navigation",
         "shell"
+      ],
+      "examples": [
+        {
+          "command": "pwd",
+          "expected_output": "/home/user/projects",
+          "explanation": "Shows the full path of the directory you're currently in."
+        }
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/pwd.1.html"
       ]
     },
     {
@@ -49,6 +89,10 @@
         "hidden",
         "dotfiles",
         "visibility"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html",
+        "https://man7.org/linux/man-pages/man1/ps.1.html"
       ]
     },
     {
@@ -60,6 +104,9 @@
         "almost-all",
         "hidden",
         "dotfiles"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -71,6 +118,9 @@
         "listing",
         "detail",
         "format"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -82,6 +132,10 @@
         "recursive",
         "directory",
         "descent"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/rm.1.html",
+        "https://man7.org/linux/man-pages/man1/cp.1.html"
       ]
     },
     {
@@ -92,6 +146,9 @@
       "tags": [
         "recursive",
         "subtree"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -103,6 +160,9 @@
         "force",
         "suppress",
         "overwrite"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/rm.1.html"
       ]
     },
     {
@@ -114,6 +174,9 @@
         "interactive",
         "confirmation",
         "safety"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/rm.1.html"
       ]
     },
     {
@@ -125,6 +188,9 @@
         "verbose",
         "output",
         "logging"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/cp.1.html"
       ]
     },
     {
@@ -136,6 +202,10 @@
         "preserve",
         "parents",
         "structure"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/mkdir.1.html",
+        "https://man7.org/linux/man-pages/man1/cp.1.html"
       ]
     },
     {
@@ -147,6 +217,9 @@
         "human-readable",
         "size",
         "units"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -158,6 +231,10 @@
         "newline",
         "no-overwrite",
         "output"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/echo.1.html",
+        "https://man7.org/linux/man-pages/man1/cp.1.html"
       ]
     },
     {
@@ -169,6 +246,9 @@
         "escape",
         "formatting",
         "output"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/echo.1.html"
       ]
     },
     {
@@ -180,6 +260,9 @@
         "directory",
         "structure",
         "no-recursion"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -191,6 +274,9 @@
         "format",
         "comma",
         "listing"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -202,6 +288,9 @@
         "sort",
         "time",
         "modification"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -212,6 +301,9 @@
       "tags": [
         "sort",
         "size"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -223,6 +315,9 @@
         "listing",
         "output",
         "layout"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -234,6 +329,9 @@
         "layout",
         "horizontal",
         "format"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -245,6 +343,9 @@
         "sanitization",
         "display",
         "safe-output"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -256,6 +357,9 @@
         "help",
         "usage",
         "reference"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/"
       ]
     },
     {
@@ -267,6 +371,9 @@
         "version",
         "release",
         "info"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/"
       ]
     },
     {
@@ -278,6 +385,9 @@
         "filter",
         "pattern",
         "exclude"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -289,6 +399,9 @@
         "hyperlink",
         "terminal",
         "metadata"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -300,6 +413,9 @@
         "color",
         "output",
         "formatting"
+      ],
+      "links": [
+        "https://man7.org/linux/man-pages/man1/ls.1.html"
       ]
     },
     {
@@ -314,6 +430,14 @@
         "text",
         "binary",
         "executable"
+      ],
+      "examples": [
+        "readme.txt",
+        "script.sh",
+        "/etc/passwd"
+      ],
+      "links": [
+        "https://en.wikipedia.org/wiki/Computer_file"
       ]
     },
     {
@@ -326,6 +450,14 @@
         "folder",
         "path",
         "container"
+      ],
+      "examples": [
+        "/home",
+        "/usr/bin",
+        "."
+      ],
+      "links": [
+        "https://en.wikipedia.org/wiki/Directory_(computing)"
       ]
     },
     {
@@ -338,6 +470,13 @@
         "link",
         "reference",
         "shortcut"
+      ],
+      "examples": [
+        "my_link -> /var/log",
+        "bin -> /usr/bin"
+      ],
+      "links": [
+        "https://en.wikipedia.org/wiki/Symbolic_link"
       ]
     },
     {
@@ -350,6 +489,14 @@
         "dotfile",
         "visibility",
         "config"
+      ],
+      "examples": [
+        ".bashrc",
+        ".gitignore",
+        ".config"
+      ],
+      "links": [
+        "https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory"
       ]
     },
     {
@@ -363,6 +510,14 @@
         "return",
         "code",
         "script"
+      ],
+      "examples": [
+        "0 (success)",
+        "1 (general error)",
+        "127 (command not found)"
+      ],
+      "links": [
+        "https://tldp.org/LDP/abs/html/exit-status.html"
       ]
     },
     {
@@ -375,6 +530,21 @@
         "condition",
         "branch",
         "logic"
+      ],
+      "examples": [
+        {
+          "command": "if [ $x -eq 1 ]; then echo 'Equal'; fi",
+          "expected_output": "Equal",
+          "explanation": "Executes the code block because x equals 1."
+        },
+        {
+          "command": "if [ $x -eq 2 ]; then echo 'Yes'; else echo 'No'; fi",
+          "expected_output": "No",
+          "explanation": "The else block runs because the condition is false."
+        }
+      ],
+      "links": [
+        "https://www.gnu.org/software/bash/manual/bash.html#Conditional-Constructs"
       ]
     },
     {
@@ -387,6 +557,26 @@
         "iteration",
         "loop",
         "range"
+      ],
+      "examples": [
+        {
+          "command": "for i in 1 2 3; do echo $i; done",
+          "expected_output": "1\n2\n3",
+          "explanation": "Loops over a list of numbers and echoes each one."
+        },
+        {
+          "command": "for file in *.txt; do echo $file; done",
+          "expected_output": "file1.txt\nfile2.txt",
+          "explanation": "Iterates over all .txt files in the directory."
+        },
+        {
+          "command": "for ((i=0; i<3; i++)); do echo $i; done",
+          "expected_output": "0\n1\n2",
+          "explanation": "C-style loop using numeric counter."
+        }
+      ],
+      "links": [
+        "https://www.gnu.org/software/bash/manual/html_node/Looping-Constructs.html"
       ]
     },
     {
@@ -399,6 +589,16 @@
         "condition",
         "loop",
         "control"
+      ],
+      "examples": [
+        {
+          "command": "x=0; while [ $x -lt 3 ]; do echo $x; x=$((x+1)); done",
+          "expected_output": "0\n1\n2",
+          "explanation": "Increments x until the condition is false."
+        }
+      ],
+      "links": [
+        "https://www.gnu.org/software/bash/manual/html_node/Looping-Constructs.html"
       ]
     },
     {
@@ -411,6 +611,21 @@
         "assignment",
         "value",
         "shell-variable"
+      ],
+      "examples": [
+        {
+          "command": "name='Alice'",
+          "expected_output": "",
+          "explanation": "Assigns the string 'Alice' to the variable 'name'."
+        },
+        {
+          "command": "count=42",
+          "expected_output": "",
+          "explanation": "Assigns the number 42 to the variable 'count'."
+        }
+      ],
+      "links": [
+        "https://www.gnu.org/software/bash/manual/html_node/Shell-Variables.html"
       ]
     },
     {
@@ -424,6 +639,26 @@
         "stderr",
         "file",
         "append"
+      ],
+      "examples": [
+        {
+          "command": "echo 'Hello' > output.txt",
+          "expected_output": "",
+          "explanation": "Overwrites output.txt with 'Hello'."
+        },
+        {
+          "command": "echo 'Error' >> log.txt",
+          "expected_output": "",
+          "explanation": "Appends 'Error' to log.txt."
+        },
+        {
+          "command": "ls nonexisting 2> error.txt",
+          "expected_output": "",
+          "explanation": "Redirects stderr to error.txt."
+        }
+      ],
+      "links": [
+        "https://www.gnu.org/software/bash/manual/html_node/Redirections.html"
       ]
     },
     {
@@ -436,6 +671,13 @@
         "conditional",
         "branch",
         "logic"
+      ],
+      "examples": [
+        {
+          "command": "if [ $x -eq 1 ]; then echo 'x is 1'; fi",
+          "expected_output": "x is 1",
+          "explanation": "The code after 'then' executes because the condition is true."
+        }
       ]
     },
     {
@@ -448,6 +690,13 @@
         "conditional",
         "fallback",
         "branch"
+      ],
+      "examples": [
+        {
+          "command": "if [ $x -eq 0 ]; then echo 'Zero'; else echo 'Not Zero'; fi",
+          "expected_output": "Not Zero",
+          "explanation": "The else block executes because the condition is false."
+        }
       ]
     },
     {
@@ -460,6 +709,13 @@
         "loop",
         "body",
         "structure"
+      ],
+      "examples": [
+        {
+          "command": "for i in 1 2 3; do echo $i; done",
+          "expected_output": "1\n2\n3",
+          "explanation": "The loop body starts after 'do'."
+        }
       ]
     },
     {
@@ -472,6 +728,13 @@
         "loop",
         "end",
         "structure"
+      ],
+      "examples": [
+        {
+          "command": "while [ $x -lt 2 ]; do echo $x; x=$((x+1)); done",
+          "expected_output": "0\n1",
+          "explanation": "The loop ends after 'done'."
+        }
       ]
     },
     {
@@ -484,6 +747,13 @@
         "branch",
         "pattern",
         "match"
+      ],
+      "examples": [
+        {
+          "command": "case $x in 1) echo 'One';; 2) echo 'Two';; *) echo 'Other';; esac",
+          "expected_output": "One",
+          "explanation": "Matches variable x against defined patterns."
+        }
       ]
     },
     {
@@ -496,6 +766,13 @@
         "modular",
         "reuse",
         "define"
+      ],
+      "examples": [
+        {
+          "command": "_my_func() { echo Hello; }; _my_func",
+          "expected_output": "Hello",
+          "explanation": "Defines and calls a function named _my_func."
+        }
       ]
     },
     {
@@ -508,6 +785,13 @@
         "exit",
         "function",
         "status"
+      ],
+      "examples": [
+        {
+          "command": "_my_func() { return 42; }; _my_func; echo $?",
+          "expected_output": "42",
+          "explanation": "The return value of the function is stored in $?."
+        }
       ]
     },
     {
@@ -520,6 +804,13 @@
         "input",
         "stdin",
         "interactive"
+      ],
+      "examples": [
+        {
+          "command": "read name",
+          "expected_output": "",
+          "explanation": "Waits for user input and stores it in the variable 'name'."
+        }
       ]
     },
     {
@@ -532,6 +823,18 @@
         "condition",
         "comparison",
         "status"
+      ],
+      "examples": [
+        {
+          "command": "test 1 -eq 1 && echo 'equal'",
+          "expected_output": "equal",
+          "explanation": "The condition is true, so the echo command runs."
+        },
+        {
+          "command": "[ 1 -eq 1 ] && echo 'equal'",
+          "expected_output": "equal",
+          "explanation": "Alternative syntax using brackets."
+        }
       ]
     },
     {
@@ -544,6 +847,13 @@
         "case",
         "block",
         "end"
+      ],
+      "examples": [
+        {
+          "command": "case $x in 1) echo one;; *) echo other;; esac",
+          "expected_output": "one",
+          "explanation": "Ends the case block."
+        }
       ]
     },
     {
@@ -556,6 +866,13 @@
         "comparison",
         "numeric",
         "equality"
+      ],
+      "examples": [
+        {
+          "command": "[ 5 -eq 5 ] && echo 'equal'",
+          "expected_output": "equal",
+          "explanation": "The condition is true because both numbers are equal."
+        }
       ]
     },
     {
@@ -568,6 +885,13 @@
         "comparison",
         "numeric",
         "not-equal"
+      ],
+      "examples": [
+        {
+          "command": "[ 3 -ne 5 ] && echo 'not equal'",
+          "expected_output": "not equal",
+          "explanation": "The condition is true because the numbers are different."
+        }
       ]
     },
     {
@@ -580,6 +904,13 @@
         "comparison",
         "numeric",
         "less-than"
+      ],
+      "examples": [
+        {
+          "command": "[ 2 -lt 5 ] && echo 'less'",
+          "expected_output": "less",
+          "explanation": "2 is less than 5."
+        }
       ]
     },
     {
@@ -592,6 +923,13 @@
         "comparison",
         "numeric",
         "le"
+      ],
+      "examples": [
+        {
+          "command": "[ 5 -le 5 ] && echo 'ok'",
+          "expected_output": "ok",
+          "explanation": "The numbers are equal, so the condition holds."
+        }
       ]
     },
     {
@@ -604,6 +942,13 @@
         "comparison",
         "numeric",
         "greater-than"
+      ],
+      "examples": [
+        {
+          "command": "[ 9 -gt 3 ] && echo 'yes'",
+          "expected_output": "yes",
+          "explanation": "9 is greater than 3."
+        }
       ]
     },
     {
@@ -616,6 +961,13 @@
         "comparison",
         "numeric",
         "ge"
+      ],
+      "examples": [
+        {
+          "command": "[ 7 -ge 5 ] && echo 'ok'",
+          "expected_output": "ok",
+          "explanation": "7 is greater than or equal to 5."
+        }
       ]
     },
     {
@@ -628,6 +980,13 @@
         "string",
         "equality",
         "comparison"
+      ],
+      "examples": [
+        {
+          "command": "[ \"$x\" = \"yes\" ] && echo 'match'",
+          "expected_output": "match",
+          "explanation": "The strings are identical."
+        }
       ]
     },
     {
@@ -640,6 +999,13 @@
         "string",
         "comparison",
         "inequality"
+      ],
+      "examples": [
+        {
+          "command": "[ \"$x\" != \"no\" ] && echo 'different'",
+          "expected_output": "different",
+          "explanation": "The strings are not equal."
+        }
       ]
     },
     {
@@ -652,6 +1018,13 @@
         "string",
         "empty",
         "check"
+      ],
+      "examples": [
+        {
+          "command": "[ -z \"$name\" ] && echo 'empty'",
+          "expected_output": "empty",
+          "explanation": "The variable is empty."
+        }
       ]
     },
     {
@@ -664,6 +1037,13 @@
         "string",
         "non-empty",
         "check"
+      ],
+      "examples": [
+        {
+          "command": "[ -n \"$name\" ] && echo 'has content'",
+          "expected_output": "has content",
+          "explanation": "The variable contains data."
+        }
       ]
     }
   ],

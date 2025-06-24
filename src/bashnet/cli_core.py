@@ -5,6 +5,7 @@ from .semantic_net import SemanticNet
 from .node import Node
 from .edge import Edge
 from .json_io import JsonIO
+from .utils import print_node_info
 
 class BashnetCLI:
     def __init__(self):
@@ -46,7 +47,8 @@ class BashnetCLI:
             return
 
         node = self.net.get_node(node_id)
-        click.secho(f"\nTerm found: {node['label']} ({node['type']})", fg="green")
+        print_node_info(node)
+        
 
         if not simple:
             neighbors = self.net.get_neighbors(node_id)
@@ -55,3 +57,5 @@ class BashnetCLI:
                 for nid in neighbors:
                     info = self.net.get_node(nid)
                     click.echo(f"- {info['label']} ({info['type']})")
+
+   
