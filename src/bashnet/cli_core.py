@@ -1,11 +1,10 @@
 import os
 import json
-import click
 from .semantic_net import SemanticNet
 from .node import Node
 from .edge import Edge
 from .json_io import JsonIO
-from .utils import print_node_info
+
 
 class BashnetCLI:
     def __init__(self):
@@ -38,24 +37,56 @@ class BashnetCLI:
         ]
         loader.load_all(files)
         loader.export(self.knowledge_file)
-        click.secho(f"Imported and saved network to: {self.knowledge_file}", fg="green")
 
-    def search(self, term: str, simple: bool):
+    def simple_search(self, term: str) -> dict | None:
         node_id = self.net.get_node_id_by_label(term)
         if not node_id:
-            click.secho(f"Error: Term '{term}' not found.", fg="red")
-            return
+            return None
+        return self.net.get_node(node_id)
 
-        node = self.net.get_node(node_id)
-        print_node_info(node)
-        
+    def deep_search(self, term: str) -> tuple[dict | None, dict]:
+        node = self.simple_search(term)
+        context: dict = {}
 
-        if not simple:
-            neighbors = self.net.get_neighbors(node_id)
-            if neighbors:
-                click.echo("Related concepts:")
-                for nid in neighbors:
-                    info = self.net.get_node(nid)
-                    click.echo(f"- {info['label']} ({info['type']})")
+        if not node:
+            context["fallback"] = self.net.search_relevant(term)
+            return None, context
 
-   
+        node_id = node["id"]
+        node_type = node.get("type")
+        context: dict = {}
+
+        if node_type == "command":
+            context["options"] = [
+                self.net.get_node(tid)
+                for tid in self.net.get_neighbors_by_relation(node_id, "options")
+                if self.net.get_node(tid)
+            ]
+
+        elif node_type == "concept":
+            related = self.net.get_neighbors_with_relation(node_id)
+            context["commands"] = [n for n in related.get("related", []) if isinstance(n, dict) and n["type"] == "command" and n["id"] != node_id]
+            context["options"] = [n for n in related.get("related", []) if isinstance(n, dict) and n["type"] == "option" and n["id"] != node_id]
+            context["others"] = [n for n in related.get("related", []) if isinstance(n, dict) and n["type"] not in ("command", "option") and n["id"] != node_id]
+
+        elif node_type == "scripting":
+            context["related"] = [
+                n for n in self.net.get_neighbors_with_relation(node_id).get("related", [])
+                if isinstance(n, dict) and n["id"] != node_id
+            ]
+
+        elif node_type == "option":
+            context["commands"] = [
+                self.net.get_node(source)
+                for source in self.net.get_sources_by_relation(node_id, "options")
+                if self.net.get_node(source)
+            ]
+
+        else:
+            # kein bekannter Typ → relevante Begriffe trotzdem anzeigen
+            context["fallback"] = self.net.search_relevant(term)
+
+        # ✨ BONUS: Immer relevante Begriffe dazunehmen, wenn du willst:
+        # context["fallback"] = self.net.search_relevant(term)
+
+        return node, context
