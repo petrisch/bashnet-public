@@ -27,3 +27,10 @@ def print_node_info(node: dict):
             click.secho("\nLinks:", fg="blue")
             for url in node["links"]:
                 click.echo(f"- {url}")
+
+        if node.get("type") == "command" and "options" in node:
+            click.secho("\nAvailable Options:", fg="blue")
+            for opt_id in node["options"]:
+                opt_node = node["_net"].get_node(opt_id) if "_net" in node else None
+                if opt_node:
+                    click.echo(f"- {opt_node['label']}: {opt_node.get('description', 'No description')}")
