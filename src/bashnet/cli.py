@@ -1,4 +1,5 @@
 import click
+import webbrowser
 from .cli_core import BashnetCLI
 from .utils import print_node_info, print_deep_search_context
 
@@ -6,11 +7,12 @@ from .utils import print_node_info, print_deep_search_context
 def print_help():
     click.secho("Welcome to Bashnet CLI – Your semantic Bash learning tool!\n", fg="cyan")
     click.echo("Available commands:")
-    click.echo("- import                 → Load all JSON files and rebuild the semantic net")
-    click.echo("- search <term>          → Deep search: context-aware with related information")
-    click.echo("- search <term> --simple → Simple search: exact node only")
-    click.echo("- help                   → Show this help again")
-    click.echo("- exit                   → Exit the application")
+    click.echo("    import                      => Load all JSON files and rebuild the semantic net")
+    click.echo("    search <term>               => Deep search: context-aware with related information")
+    click.echo("    search <term> --simple      => Simple search: exact node only")
+    click.echo("    visualize                   => Generate and open an interactive HTML graph")
+    click.echo("    help                        => Show this help again")
+    click.echo("    exit                        => Exit the application")
     click.echo("Press Ctrl+C anytime to exit.\n")
 
 
@@ -62,6 +64,15 @@ def main():
                 term = args[1]
                 simple = "--simple" in args
                 handle_search(cli, term, simple)
+            
+            elif cmd == "visualize":
+                try:
+                    cli.load_knowledge_net()
+                    html_file = "semantic_net.html"
+                    cli.net.export_html(html_file)
+                    webbrowser.open(html_file)
+                except Exception as e:
+                    click.secho(f"Error generating visualization: {e}", fg="red")
 
             elif cmd == "help":
                 print_help()
@@ -75,6 +86,3 @@ def main():
         except Exception as e:
             click.secho(f"Error: {e}", fg="red")
 
-
-if __name__ == "__main__":
-    main()

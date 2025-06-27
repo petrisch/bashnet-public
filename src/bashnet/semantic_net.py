@@ -1,6 +1,8 @@
 import networkx as nx
+from pyvis.network import Network
 from .node import Node
 from .edge import Edge
+
 
 
 class SemanticNet:
@@ -82,3 +84,32 @@ class SemanticNet:
                 for u, v, d in self.graph.edges(data=True)
             ]
         }
+    
+    def export_html(self, filename="semantic_net.html"):
+        from pyvis.network import Network
+
+        net = Network(height="800px", width="100%", directed=True, notebook=False)
+        net.barnes_hut()
+
+        for node_id, data in self.graph.nodes(data=True):
+            label = data.get("label", node_id)
+            title = data.get("description", "")
+            color = self._color_by_type(data.get("type"))
+            net.add_node(node_id, label=label, title=title, color=color)
+
+        for u, v, data in self.graph.edges(data=True):
+            rel = data.get("relation", "")
+            net.add_edge(u, v, label=rel)
+
+        net.write_html(filename)
+        print(f"Graph exported to {filename}")
+
+
+    def _color_by_type(self, node_type: str) -> str:
+        """Returns a color based on the node type."""
+        return {
+            "command": "#81D4FA",
+            "option": "#A5D6A7",
+            "concept": "#FFF59D",
+            "scripting": "#CE93D8"
+        }.get(node_type, "#E0E0E0")  # default grey

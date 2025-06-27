@@ -24,24 +24,22 @@ def print_node_info(node: dict):
                 expl = example.get("explanation", "")
                 if "\n" in out:
                     formatted_out = "\n    " + out.replace("\n", "\n    ")
-                    click.echo(f"- Command: {cmd}")
+                    click.echo(f"  Command: {cmd}")
                     click.echo(f"  Output:{formatted_out}")
                 else:
-                    click.echo(f"- Command: {cmd}")
+                    click.echo(f"  Command: {cmd}")
                     click.echo(f"  Output:  {out}")
                 click.echo(f"  Note:    {expl}\n")
         else:
             for entry in examples:
-                click.echo(f"- {entry}")
+                click.echo(f"{entry}")
 
     links = node.get("links")
     if links:
         click.secho("\nLinks:", fg="blue")
         for url in links:
-            click.echo(f"- {url}")
+            click.echo(f"{url}")
 
-
-# === Kontextspezifische Ausgabe pro Node-Typ ===
 
 def print_context_for_command(context: dict):
     options = context.get("options", [])
@@ -49,7 +47,7 @@ def print_context_for_command(context: dict):
         click.secho("\nUsable Options:", fg="blue")
         for opt in options:
             if isinstance(opt, dict):
-                click.echo(f"- {opt['label']}: {opt.get('description', 'No description')}")
+                click.echo(f"=> {opt['label']}: {opt.get('description', 'No description')}")
 
 
 def print_context_for_concept(context: dict):
@@ -61,19 +59,19 @@ def print_context_for_concept(context: dict):
         click.secho("\nRelated Commands:", fg="blue")
         for c in cmds:
             if isinstance(c, dict):
-                click.echo(f"- {c['label']}: {c.get('description', 'No description')}")
+                click.echo(f"=> {c['label']}: {c.get('description', 'No description')}")
 
     if opts:
         click.secho("\nAssociated Options:", fg="blue")
         for o in opts:
             if isinstance(o, dict):
-                click.echo(f"- {o['label']}: {o.get('description', 'No description')}")
+                click.echo(f"=> {o['label']}: {o.get('description', 'No description')}")
 
     if others:
         click.secho("\nOther Relations:", fg="blue")
         for o in others:
             if isinstance(o, dict):
-                click.echo(f"- {o['label']} ({o['type']})")
+                click.echo(f"=> {o['label']} ({o['type']})")
 
 
 def print_context_for_scripting(context: dict):
@@ -82,7 +80,7 @@ def print_context_for_scripting(context: dict):
         click.secho("\nRelated Concepts:", fg="blue")
         for r in related:
             if isinstance(r, dict):
-                click.echo(f"- {r['label']}: {r.get('description', 'No description')}")
+                click.echo(f"=> {r['label']}: {r.get('description', 'No description')}")
 
 
 def print_context_for_option(context: dict):
@@ -91,7 +89,7 @@ def print_context_for_option(context: dict):
         click.secho("\nUsed in Commands:", fg="blue")
         for c in used_by:
             if isinstance(c, dict):
-                click.echo(f"- {c['label']}: {c.get('description', 'No description')}")
+                click.echo(f"=> {c['label']}: {c.get('description', 'No description')}")
 
 
 def print_context_fallback(context: dict):
@@ -99,7 +97,7 @@ def print_context_fallback(context: dict):
         click.secho("\nRelated matches (by relevance):", fg="magenta")
         for rel, score in context["fallback"]:
             if isinstance(rel, dict):
-                click.echo(f"- {rel['label']} ({rel['type']}) [score: {score}]")
+                click.echo(f"=> {rel['label']} ({rel['type']}) [score: {score}]")
                 if rel.get("description"):
                     click.echo(f"  Description: {rel['description']}")
                     click.echo("")
