@@ -1050,11 +1050,6 @@
   "edges": [
     [
       "cmd_ls",
-      "cmd_pwd",
-      "related"
-    ],
-    [
-      "cmd_ls",
       "opt_a",
       "options"
     ],
@@ -1174,6 +1169,11 @@
       "related"
     ],
     [
+      "cmd_ls",
+      "cmd_pwd",
+      "related"
+    ],
+    [
       "cmd_cd",
       "cmd_pwd",
       "related"
@@ -1185,11 +1185,6 @@
     ],
     [
       "cmd_pwd",
-      "cmd_cd",
-      "related"
-    ],
-    [
-      "cmd_pwd",
       "opt_help",
       "options"
     ],
@@ -1197,6 +1192,11 @@
       "cmd_pwd",
       "opt_version",
       "options"
+    ],
+    [
+      "cmd_pwd",
+      "cmd_cd",
+      "related"
     ],
     [
       "cmd_pwd",

@@ -1,5 +1,6 @@
 import click
 import webbrowser
+import os
 from .cli_core import BashnetCLI
 from .utils import print_node_info, print_deep_search_context
 
@@ -70,7 +71,11 @@ def main():
                     cli.load_knowledge_net()
                     html_file = "semantic_net.html"
                     cli.net.export_html(html_file)
-                    webbrowser.open(html_file)
+                    if os.environ.get("RUNNING_IN_DOCKER") != "1":
+                        webbrowser.open(html_file)
+                    else:
+                        print(f"Open this file manually in your host browser: {html_file}")
+
                 except Exception as e:
                     click.secho(f"Error generating visualization: {e}", fg="red")
 
