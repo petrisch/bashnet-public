@@ -19,7 +19,7 @@ class JsonIO:
                 node_id=entry["id"],
                 label=entry["label"],
                 node_type=entry["type"],
-                **{k: v for k, v in entry.items() if k not in {"id", "label", "type", "examples", "options", "related", "links"}}
+                **{k: v for k, v in entry.items() if k not in {"id", "label", "type", "options", "related"}}
             )
             self.net.add_node(node)
 
