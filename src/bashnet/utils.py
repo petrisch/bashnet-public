@@ -103,8 +103,6 @@ def print_context_fallback(context: dict):
                     click.echo("")
 
 
-# === Zentrale Verzweigung ===
-
 def print_deep_search_context(node: dict, context: dict):
     """Delegates output rendering to type-specific handlers."""
     t = node.get("type")

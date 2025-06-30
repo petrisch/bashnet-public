@@ -83,10 +83,6 @@ class BashnetCLI:
             ]
 
         else:
-            # kein bekannter Typ → relevante Begriffe trotzdem anzeigen
             context["fallback"] = self.net.search_relevant(term)
-
-        # ✨ BONUS: Immer relevante Begriffe dazunehmen, wenn du willst:
-        # context["fallback"] = self.net.search_relevant(term)
 
         return node, context

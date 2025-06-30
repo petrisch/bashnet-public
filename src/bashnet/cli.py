@@ -30,7 +30,7 @@ def handle_search(cli: BashnetCLI, term: str, simple: bool):
         if node:
             print_node_info(node)
             print_deep_search_context(node, context)
-        elif context.get("fallback"):  # ✅ Ergänze das hier
+        elif context.get("fallback"): 
             click.secho(f"Term '{term}' not found directly. Showing relevant matches:\n", fg="yellow")
             from .utils import print_context_fallback
             print_context_fallback(context)
