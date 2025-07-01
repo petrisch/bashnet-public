@@ -1,3 +1,4 @@
 click
 networkx
 pyvis
+pytest
