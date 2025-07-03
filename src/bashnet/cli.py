@@ -6,7 +6,7 @@ from .utils import print_node_info, print_deep_search_context
 
 
 def print_help():
-    click.secho("Welcome to Bashnet CLI – Your semantic Bash learning tool!\n", fg="cyan")
+    click.secho("Welcome to Bashnet CLI - Your semantic Bash learning tool!\n", fg="cyan")
     click.echo("Available commands:")
     click.echo("    import                      => Load all JSON files and rebuild the semantic net")
     click.echo("    search <term>               => Deep search: context-aware with related information")
