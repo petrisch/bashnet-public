@@ -10,4 +10,4 @@
 *.fdb_latexmk
 *.synctex.gz
 
-docs/images/*.pdf     # Optional: wenn generiert
+
