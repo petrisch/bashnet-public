@@ -78,13 +78,16 @@ To get started, here's a small valid example:
 
 ## 🐳 Run with Docker (Recommended)
 
+Make sure docker is installed.
+
+### Linux / macOS / WSL (Bash-Terminal):
 ### 🔧 Step 1: Build the image
 
 ```bash
 docker build -t bashnet .
 ```
 
-### ▶ Step 2: Start the CLI
+### ▶ Step 2: Start the CLI in your Bashnet project folder
 
 ```bash
 docker run --rm -it \
@@ -92,6 +95,23 @@ docker run --rm -it \
   -e RUNNING_IN_DOCKER=1 \
   bashnet
 ```
+### Windows 11 (PowerShell):
+### 🔧 Step 1: Build the image
+
+```bash
+docker build -t bashnet .
+```
+
+### ▶ Step 2: Start the CLI in your Bashnet project folder
+
+```bash
+docker run --rm -it `
+  -v "${PWD}:/app" `
+  -e RUNNING_IN_DOCKER=1 `
+  bashnet
+```
+
+
 
 ### 🧾 Flags explained
 
