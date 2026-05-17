@@ -6,12 +6,12 @@ Bashnet is a cross-platform command-line tool that helps you explore and learn B
 
 ## 🚀 Features
 
-- Import modular Bash knowledge from structured JSON files  
-- Deep semantic search: finds related options, concepts, commands  
-- Simple search: retrieve a single concept by label  
-- Export complete semantic network as `knowledge_net.json`  
-- Visualize the network as interactive HTML (via pyvis)  
-- Fully Docker-compatible for platform-independent execution  
+- Import modular Bash knowledge from structured JSON files
+- Deep semantic search: finds related options, concepts, commands
+- Simple search: retrieve a single concept by label
+- Export complete semantic network as `knowledge_net.json`
+- Visualize the network as interactive HTML (via pyvis)
+- Fully Docker-compatible for platform-independent execution
 - CLI interface with live terminal usage
 
 ---
@@ -35,43 +35,35 @@ All files should be placed in the `src/data/` folder to be imported correctly.
 To get started, here's a small valid example:
 
 **src/data/commands.json**
+
 ```json
 [
-    {
-        "id": "cmd_cd",
-        "label": "cd",
-        "type": "command",
-        "description": "Changes the current working directory to a specified path.",
-        "category": "file management",
-        "tags": [
-            "filesystem",
-            "navigation",
-            "directory",
-            "shell"
-        ],
-        "examples": [
-            {
-                "command": "cd /home/user",
-                "expected_output": "",
-                "explanation": "Changes to the absolute path '/home/user'."
-            },
-            {
-                "command": "cd ..",
-                "expected_output": "",
-                "explanation": "Moves one level up to the parent directory."
-            }
-        ],
-        "options": [],
-        "related": [
-            "cmd_pwd",
-            "con_directory"
-        ],
-        "links": [
-            "https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#index-cd"
-        ]
-    }
+  {
+    "id": "cmd_cd",
+    "label": "cd",
+    "type": "command",
+    "description": "Changes the current working directory to a specified path.",
+    "category": "file management",
+    "tags": ["filesystem", "navigation", "directory", "shell"],
+    "examples": [
+      {
+        "command": "cd /home/user",
+        "expected_output": "",
+        "explanation": "Changes to the absolute path '/home/user'."
+      },
+      {
+        "command": "cd ..",
+        "expected_output": "",
+        "explanation": "Moves one level up to the parent directory."
+      }
+    ],
+    "options": [],
+    "related": ["cmd_pwd", "con_directory"],
+    "links": [
+      "https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#index-cd"
+    ]
+  }
 ]
- 
 ```
 
 ---
@@ -80,7 +72,8 @@ To get started, here's a small valid example:
 
 Make sure docker is installed.
 
-### Linux / macOS / WSL (Bash-Terminal):
+### Linux / macOS / WSL (Bash-Terminal)
+
 ### 🔧 Step 1: Build the image
 
 ```bash
@@ -95,7 +88,9 @@ docker run --rm -it \
   -e RUNNING_IN_DOCKER=1 \
   bashnet
 ```
-### Windows 11 (PowerShell):
+
+### Windows 11 (PowerShell)
+
 ### 🔧 Step 1: Build the image
 
 ```bash
@@ -110,8 +105,6 @@ docker run --rm -it `
   -e RUNNING_IN_DOCKER=1 `
   bashnet
 ```
-
-
 
 ### 🧾 Flags explained
 
@@ -145,7 +138,6 @@ bashnet> exit
     → Leave the Bashnet CLI
 ```
 
-
 ---
 
 ## 🧪 Run Without Docker (Local Python)
@@ -159,7 +151,7 @@ You can also run Bashnet locally if you prefer:
 pip install -r requirements.txt
 ```
 
-3. Run the CLI:
+1. Run the CLI:
 
 ```bash
 python -m bashnet
@@ -184,9 +176,17 @@ poetry install
 poetry run python -m bashnet
 ```
 
+Or because we change our tools all to often:
+
+```bash
+uv sync
+uv run python -m bashnet
+```
+
 ---
 
 ## 📄 License
 
 MIT License – free to use, modify, extend.
 Copyright (c) 2025
+

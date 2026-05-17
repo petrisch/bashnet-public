@@ -8,5 +8,6 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-
+*.lock
+**/__pycache__/
 
